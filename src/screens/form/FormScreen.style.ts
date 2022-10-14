@@ -4,6 +4,7 @@ import { ViewStyle, StyleSheet } from "react-native";
 interface Style {
   container: ViewStyle;
   buttonStyle: ViewStyle;
+  input: ViewStyle;
 }
 
 export default (theme: ExtendedTheme) => {
@@ -14,6 +15,7 @@ export default (theme: ExtendedTheme) => {
       backgroundColor: colors.background,
       alignItems: "center",
       justifyContent: "center",
+      width: "100%",
     },
     buttonStyle: {
       height: 45,
@@ -30,6 +32,13 @@ export default (theme: ExtendedTheme) => {
         width: 0,
         height: 3,
       },
+    },
+    input: {
+      width: "100%",
+      height: 40,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
     },
   });
 };

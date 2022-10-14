@@ -12,7 +12,7 @@ import { SCREENS } from "@shared-constants";
 import { LightTheme, DarkTheme, palette } from "@theme/themes";
 // ? Screens
 import HomeScreen from "@screens/home/HomeScreen";
-import SearchScreen from "@screens/search/SearchScreen";
+import FormScreen from "@screens/form/FormScreen";
 import DetailScreen from "@screens/detail/DetailScreen";
 import ProfileScreen from "@screens/profile/ProfileScreen";
 import NotificationScreen from "@screens/notification/NotificationScreen";
@@ -40,8 +40,8 @@ const Navigation = () => {
       case SCREENS.HOME:
         iconName = focused ? "home" : "home-outline";
         break;
-      case SCREENS.SEARCH:
-        iconName = focused ? "search" : "search-outline";
+      case SCREENS.FORM:
+        iconName = focused ? "list" : "list-outline";
         break;
       case SCREENS.NOTIFICATION:
         iconName = focused ? "notifications" : "notifications-outline";
@@ -70,14 +70,34 @@ const Navigation = () => {
           },
         })}
       >
-        <Tab.Screen name={SCREENS.HOME} component={HomeScreen} />
-        <Tab.Screen name={SCREENS.SEARCH} component={SearchScreen} />
+        <Tab.Screen
+          name={SCREENS.HOME}
+          component={HomeScreen}
+          options={{
+            tabBarTestID: "home-nav",
+          }}
+        />
+        <Tab.Screen
+          name={SCREENS.FORM}
+          component={FormScreen}
+          options={{
+            tabBarTestID: "form-nav",
+          }}
+        />
         <Tab.Screen
           name={SCREENS.NOTIFICATION}
           component={NotificationScreen}
+          options={{
+            tabBarTestID: "notification-nav",
+          }}
         />
-        <Tab.Screen name={SCREENS.PROFILE} component={ProfileScreen} />
-        <Tab.Screen name={SCREENS.PROFILE1} component={ProfileScreen} />
+        <Tab.Screen
+          name={SCREENS.PROFILE}
+          component={ProfileScreen}
+          options={{
+            tabBarTestID: "profile-nav",
+          }}
+        />
       </Tab.Navigator>
     );
   };

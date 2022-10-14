@@ -2,7 +2,8 @@ const {
   DetoxCircusEnvironment,
   SpecReporter,
   WorkerAssignReporter,
-} = require("detox/runners/jest-circus");
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+} = require('detox/runners/jest-circus');
 
 class CustomDetoxEnvironment extends DetoxCircusEnvironment {
   constructor(config, context) {
@@ -20,4 +21,5 @@ class CustomDetoxEnvironment extends DetoxCircusEnvironment {
   }
 }
 
+// eslint-disable-next-line no-undef
 module.exports = CustomDetoxEnvironment;

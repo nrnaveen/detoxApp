@@ -1,10 +1,10 @@
 {
     "bail": 1,
-    "maxWorkers": 1,
-    "testEnvironment": "./environment",
+    "verbose": true,
     "testRunner": "jest-circus/runner",
-    "testTimeout": 120000,
-    "testRegex": "\\.e2e\\.js$",
-    "reporters": ["detox/runners/jest/streamlineReporter"],
-    "verbose": true
+    "testTimeout": 480000,
+    "testRegex": "tests/.*\\.spec\\.ts$",
+    "testEnvironment": "./config/environment",
+    "setupFilesAfterEnv": ["./config/init.ts"],
+    "reporters": ["detox/runners/jest/streamlineReporter"]
 }

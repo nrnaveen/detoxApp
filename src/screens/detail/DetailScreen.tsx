@@ -24,6 +24,7 @@ const DetailScreen: React.FC<DetailScreenProps> = () => {
       <RNBounceable
         style={styles.buttonStyle}
         onPress={() => NavigationService.goBack()}
+        testID={"go_back_detail"}
       >
         <Text color={colors.white}>Go back to Home</Text>
       </RNBounceable>

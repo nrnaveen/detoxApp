@@ -67,7 +67,7 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
 
   const Welcome = () => (
     <>
-      <Text h1 bold color={colors.text}>
+      <Text h1 bold color={colors.text} testID="homePageWelcome">
         Hello Kuray
       </Text>
       <Text
