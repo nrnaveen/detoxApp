@@ -3,8 +3,6 @@
 Clean up the files from the example repository and do not forget to install the dependencies
 There is a good example by default on `HomeScreen`. You can delete the all screens.
 
-- `yarn install`
-- `yarn clean-up`
 - `yarn install && npx pod-install`
 - `yarn ios/android`
 

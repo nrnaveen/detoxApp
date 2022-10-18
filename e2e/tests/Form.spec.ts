@@ -6,6 +6,7 @@ import { tapTo } from "../utils/TestToolbox";
 
 describe("Form Page", () => {
   beforeAll(async () => {
+    await device.launchApp();
     await tapTo("form-nav");
     await FormScreenPage.Form(
       user.firstName,

@@ -14,7 +14,6 @@
     "axios": "^0.27.2",
     "axios-hooks": "^3.1.4",
     "events": "^3.3.0",
-    "jest": "^29.1.2",
     "react": "18.2.0",
     "react-native": "0.69.4",
     "react-native-dynamic-vector-icons": "^1.2.0",
@@ -33,6 +32,9 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@react-native-community/eslint-config": "^3.1.0",
+    "@testing-library/jest-native": "^4.0.1",
+    "@testing-library/react-native": "^7.2.0",
+    "@types/jest": "^26.0.24",
     "@types/react-native": "^0.69.5",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
@@ -52,13 +54,16 @@
     "eslint-plugin-react-native": "4.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "jest-environment-node": "^26.6.2",
     "metro-react-native-babel-preset": "^0.72.0",
     "prettier": "^2.7.1",
     "react-test-renderer": "18.2.0",
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "android": "npx react-native run-android --appIdSuffix debug",
+    "android": "npx react-native run-android",
     "ios": "npx react-native run-ios --simulator 'iPhone 12'",
     "start": "react-native start --reset-cache",
     "husky:setup": "npx husky-init && npm run husky:commitlint && npm run husky:prettier && npm run husky:lint",
@@ -76,8 +81,8 @@
     "test_ios": "detox build -c ios.sim.release && detox test -c ios.sim.release",
     "test_ios_d": "detox build -c ios.sim.debug && detox test -c ios.sim.debug",
     "test_android": "detox build -c android.emu.release && detox test -c android.emu.release",
-    "test_android_d": "detox build -c android.emu.debug && detox test -c android.emu.debug",
-    "test": "jest",
+    "test_android_d": "detox build -c android.emu.debug && detox test -c android.emu.debug --loglevel trace --record-logs all",
+    "test": "jest ./src --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "engine": {
@@ -119,14 +124,14 @@
       "android.emu.debug": {
         "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
         "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
-        "type": "android.emulator",
-        "name": "Pixel_2_API_29"
+        "type": "android.attached",
+        "name": "TECNO i5"
       },
       "android.emu.release": {
         "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
         "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
         "type": "android.emulator",
-        "name": "Pixel_2_API_29"
+        "name": "Pixel_4_API_28"
       }
     },
     "test-runner": "jest",

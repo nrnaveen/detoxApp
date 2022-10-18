@@ -27,19 +27,20 @@ export async function launchApp(
     },
   },
 ) {
-  const detoxURLBlacklistRegex = getDetoxURLBlacklistRegexFromDomains([
-    "codepush.appcenter.ms",
-    "segment.io",
-    "play.google.com",
-    "adjust.com",
-    "clientstream.launchdarkly.com",
-  ]);
-  await device.launchApp({
-    ...config,
-    launchArgs: {
-      detoxURLBlacklistRegex,
-    },
-  });
+  // const detoxURLBlacklistRegex = getDetoxURLBlacklistRegexFromDomains([
+  //   "codepush.appcenter.ms",
+  //   "segment.io",
+  //   "play.google.com",
+  //   "adjust.com",
+  //   "clientstream.launchdarkly.com",
+  // ]);
+  // await device.launchApp({
+  //   ...config,
+  //   // launchArgs: {
+  //   //   detoxURLBlacklistRegex,
+  //   // },
+  // });
+  await device.launchApp();
 }
 
 export async function goBack() {

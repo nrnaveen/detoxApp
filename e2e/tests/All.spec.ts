@@ -1,6 +1,9 @@
 import { tapTo } from "../utils/TestToolbox";
 
 describe("All Page", () => {
+  // beforeAll(async () => {
+  //   await device.launchApp();
+  // });
   beforeEach(async () => {
     await device.reloadReactNative();
   });
